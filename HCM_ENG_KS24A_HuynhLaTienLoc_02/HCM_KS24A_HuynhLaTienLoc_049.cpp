@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-void nhapMang(int arr[], int *n) {
+void nhapmang(int arr[], int *n) {
     printf("Nhap so phan tu cua mang: ");
     scanf("%d", n);
     for (int i = 0; i < *n; i++) {
@@ -10,7 +10,7 @@ void nhapMang(int arr[], int *n) {
     }
 }
 
-void hienThiMang(int arr[], int n) {
+void hienthimang(int arr[], int n) {
     printf("Cac gia tri cua mang: ");
     for (int i = 0; i < n; i++) {
         printf("arr[%d]=%d\n", i, arr[i]);
@@ -18,7 +18,7 @@ void hienThiMang(int arr[], int n) {
     printf("\n");
 }
 
-int demPhanTuChan(int arr[], int n) {
+int demphantuchan(int arr[], int n) {
     int count = 0;
     for (int i = 0; i < n; i++) {
         if (arr[i] % 2 == 0) {
@@ -28,7 +28,7 @@ int demPhanTuChan(int arr[], int n) {
     return count;
 }
 
-int timGiaTriLonThuHai(int arr[], int n) {
+int timgiatrilonthuhai(int arr[], int n) {
     int first = arr[0], second = -1;
     for (int i = 1; i < n; i++) {
         if (arr[i] > first) {
@@ -41,7 +41,7 @@ int timGiaTriLonThuHai(int arr[], int n) {
     return second;
 }
 
-void themPhanTuDauMang(int arr[], int *n, int value) {
+void themphantudaumang(int arr[], int *n, int value) {
     for (int i = *n; i > 0; i--) {
         arr[i] = arr[i - 1];
     }
@@ -49,7 +49,7 @@ void themPhanTuDauMang(int arr[], int *n, int value) {
     (*n)++;
 }
 
-void xoaPhanTuTaiViTri(int arr[], int *n, int pos) {
+void xoaphantutaivitri(int arr[], int *n, int pos) {
     if (pos < 0 || pos >= *n) {
         printf("Vi tri khong hop le!\n");
         return;
@@ -60,7 +60,7 @@ void xoaPhanTuTaiViTri(int arr[], int *n, int pos) {
     (*n)--;
 }
 
-void sapXepGiamDanBubbleSort(int arr[], int n) {
+void sapxepgiamdanbubbleSort(int arr[], int n) {
     for (int i = 0; i < n - 1; i++) {
         for (int j = 0; j < n - i - 1; j++) {
             if (arr[j] < arr[j + 1]) {
@@ -94,31 +94,31 @@ int main() {
 
         switch (c) {
             case 1:
-                nhapMang(arr, &n);
+                nhapmang(arr, &n);
                 break;
             case 2:
-                hienThiMang(arr, n);
+                hienthimang(arr, n);
                 break;
             case 3:
                 printf("So luong phan tu chan trong mang: %d\n", demPhanTuChan(arr, n));
                 break;
             case 4:
-                printf("Gia tri lon thu hai trong mang: %d\n", timGiaTriLonThuHai(arr, n));
+                printf("Gia tri lon thu hai trong mang: %d\n", timgiatrilonthuhai(arr, n));
                 break;
             case 5:
                 int value;
                 printf("Nhap gia tri can them vao dau mang: ");
                 scanf("%d", &value);
-                themPhanTuDauMang(arr, &n, value);
+                themphantudaumang(arr, &n, value);
                 break;
             case 6:
                 int pos;
                 printf("Nhap vi tri can xoa: ");
                 scanf("%d", &pos);
-                xoaPhanTuTaiViTri(arr, &n, pos);
+                xoaphantutaivitri(arr, &n, pos);
                 break;
             case 10:
-                sapXepGiamDanBubbleSort(arr, n);
+                sapxepgiamdanbubbleSort(arr, n);
                 break;
             default:
                 printf("Lua chon khong hop le. Vui long chon lai.\n");
